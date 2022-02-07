@@ -26,69 +26,40 @@ public class Autosalon {
             String country = scanner.next();
             Car newCar = new Car(model,year,engine,price,country);
             cars.add(newCar);
-            cars.get(cars.size()-1).carInfo();
+
         }
     }
 
-    
     public void maxPrice() {
     }
 
     public static int budgetSet() {
         Scanner scanner = new Scanner(System.in);
-        int budget = scanner.nextInt();;
-        if (budget > 0 ) {
-            System.out.println("Отлично! Вот что мы можем предложить (выберите номер):");
-            System.out.println("1. Подбор авто по году выпуска");
-            System.out.println("2. Подбор авто по стоимости");
-            System.out.println("3. Сдать машину в Trade-In");
-
-        } else {
-            System.out.println("Ваш бюджет должен быть положительным");
-            budgetSet();
+        int budget = 0;
+        while (budget <= 0) {
+            budget = scanner.nextInt();
+            if (budget <= 0) {
+                System.out.println("Ваш бюджет должен быть положительным");
+            } else {
+                System.out.println("Отлично! Вот что мы можем предложить (выберите номер):");
+                Interface.menu();
+            }
         }
         return budget;
+    }
 
-    }
-    public static int getBudget(){
-        return budgetSet();
-    }
-//    public static void yourBudget(){
-//        System.out.println(budgetSet());
+//    public static int getBudget(){
+//        return ();
 //    }
+
     static void priceSearch(){
-        System.out.println("Вот авто которые вы можете себе позволить:");
-        if (getBudget() >= Car.getPrice()) {   //условие не true, fixit
-            System.out.println("Проверка метода");    //прописать логику
-            }else{
+        while (budgetSet() < Car.getPrice()) {
+            if (budgetSet() >= Car.getPrice()) {
+                System.out.println("Вот авто которые вы можете себе позволить:");
+//                вывод подходящих машин
+            } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");
             }
-    }
-    static void choice(){
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        int result1 = 0;
-        if (number == 1) {
-            System.out.println("Выполняем подбор авто по году выпуска");
-            System.out.println("Введите желаемый год");
-            int yearIn = scanner.nextInt();
-            for (int i = 0; i< cars.size(); i++ ) {
-                if (yearIn == Car.getYear()) {
-                    yearIn=result1;
-                    System.out.println("Машина с указанным годом найдена: ");
-                } else {
-                    System.out.println("К сожалению машины указанного года в нашем парке нет");
-                }
-            }
-        }if (number == 2) {
-            System.out.println("Выполняем подбор авто по стоимости");
-            priceSearch();
-        }if (number == 3) {
-            System.out.println("У нас лучшие цены! Расскажите подробнее.");
-            addCars();
-
-        }else{
-            System.out.println("Некорректный ввод,выберите номер пункта из списка");
         }
     }
 }
