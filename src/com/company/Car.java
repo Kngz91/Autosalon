@@ -15,8 +15,9 @@ public class Car {
 
     static Car honda = new Car("Honda",2007,2.0, 1000, "Japan");
 
-    public static void carInfo(){
-        System.out.println(getYear()+getEngine()+getPrice()+getCountry());
+    public void carInfo(){
+        System.out.println(getModel() + " " + getYear() + " "
+                + getEngine() + " " + getPrice() + " " + getCountry());
     }
 
 

@@ -13,9 +13,9 @@ public class Autosalon {
         System.out.println("Введите количество сдаваемых машин");
         int n = scanner.nextInt();
 
-        for (int i = 0; i < n; n++) {
-            System.out.println("Введите марку" + (i + 1) + " машины");
-            String model = scanner.nextLine();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Введите марку " + (i + 1) + " машины");
+            String model = scanner.next();
             System.out.println("Введите цену " + (i + 1) + " машины");
             int price = scanner.nextInt();
             System.out.println("Введите объем двигателя " + (i + 1) + " машины");
@@ -23,9 +23,10 @@ public class Autosalon {
             System.out.println("Введите год производства " + (i + 1) + " машины");
             int year = scanner.nextInt();
             System.out.println("Введите страну-производителя " + (i + 1) + " машины");
-            String country = scanner.nextLine();
+            String country = scanner.next();
             Car newCar = new Car(model,year,engine,price,country);
             cars.add(newCar);
+            cars.get(cars.size()-1).carInfo();
         }
     }
 
@@ -41,6 +42,7 @@ public class Autosalon {
             System.out.println("1. Подбор авто по году выпуска");
             System.out.println("2. Подбор авто по стоимости");
             System.out.println("3. Сдать машину в Trade-In");
+
         } else {
             System.out.println("Ваш бюджет должен быть положительным");
             budgetSet();
