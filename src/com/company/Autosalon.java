@@ -52,14 +52,26 @@ public class Autosalon {
 //        return ();
 //    }
 
-    static void priceSearch(){
-        while (budgetSet() < Car.getPrice()) {
+    public static void priceSearch() {
+        for (int i = 0; i < cars.size(); i++) {
             if (budgetSet() >= Car.getPrice()) {
-                System.out.println("Вот авто которые вы можете себе позволить:");
-//                вывод подходящих машин
+                Car.carInfo();
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");
             }
         }
     }
+
+
+
+
+//        while (budgetSet() < Car.getPrice()) {
+//            if (budgetSet() >= Car.getPrice()) {
+//                System.out.println("Вот авто которые вы можете себе позволить:"); //через for пройти по массиву , через if вывести подходящие
+////                вывод подходящих машин
+//            } else {
+//                System.out.println("В парке нет авто, подходящих вашему бюджету");
+//            }
+//        }
+//    }
 }

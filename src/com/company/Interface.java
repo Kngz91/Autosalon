@@ -23,58 +23,48 @@ public class Interface {
         System.out.println("..........................................................");
     }
 
-    public static int choice2() {
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        if (number == 1) {
-            choiseYearSearch();
-        }if (number == 2){
-            choisePriceSearch();
-        }if (number == 3){
-            Autosalon.addCars();
-        }if (number ==4){
-            clearScreen();
-        }
 
-        return number;
-    }
 
-    public static void choiseNumber() {
-//        boolean exit = false;
-//        while !exit {
-//        Scanner scanner = new Scanner(System.in);
-//        int choice = scanner.nextInt();
-//            switch (choice):
-//              choiseYearSearch();
-//              break;
-//              case 2 (choise ==2):
-//              choisePriceSearch();
-//              break;
-//              case 3  (choise ==3):
-//              addCars();
-//              break;
-//              case 4  (choise ==0)
-//              exit = true;
-//              break;
-    }
-
-        public static void choiseYearSearch(){
-        Scanner scanner = new Scanner(System.in);
-            int result1=0;
-            System.out.println("Выполняем подбор авто по году выпуска");
-            System.out.println("Введите желаемый год");
-            int yearIn = scanner.nextInt();
-            for (int i = 0; i < Car.cars.size(); i++) {
-                if (yearIn == Car.getYear()) {
-                    yearIn = result1;
-                    System.out.println("Машина с указанным годом найдена: ");
-                } else {
-                    System.out.println("К сожалению машины указанного года в нашем парке нет");
-                }
+    public static void choiceNumber() {
+        boolean exit = false;
+        while (!exit) {
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1: choice = 1;
+                    choiceYearSearch();
+                    break;
+                case 2: choice = 2;
+                    choicePriceSearch();
+                    break;
+                case 3: choice = 3;
+                    Autosalon.addCars();
+                    break;
+                case 4: choice = 0;
+                    exit = true;
+                    break;
             }
         }
+    }
 
-    public static void choisePriceSearch(){
+    public static void choiceYearSearch() {
+        Scanner scanner = new Scanner(System.in);
+        int result1 = 0;
+        System.out.println("Выполняем подбор авто по году выпуска");
+        System.out.println("Введите желаемый год");
+        int yearIn = scanner.nextInt();
+        for (int i = 0; i < Car.cars.size(); i++) {
+            if (yearIn == Car.getYear()) {
+                yearIn = result1;
+                System.out.println("Машина с указанным годом найдена: ");
+            } else {
+                System.out.println("К сожалению машины указанного года в нашем парке нет");
+            }
+        }
+    }
+
+
+    public static void choicePriceSearch(){
         System.out.println("Выполняем подбор авто по стоимости");
         Autosalon.priceSearch();
     }
@@ -97,4 +87,20 @@ public class Interface {
 //        for (int i = 0; i < 25; i++){
 //            System.out.println(" ");
 //        }
+//    }
+
+//    public static int choice2() {
+//        Scanner scanner = new Scanner(System.in);
+//        int number = scanner.nextInt();
+//        if (number == 1) {
+//            choiceYearSearch();
+//        }if (number == 2){
+//            choicePriceSearch();
+//        }if (number == 3){
+//            Autosalon.addCars();
+//        }if (number ==4){
+//            clearScreen();
+//        }
+//
+//        return number;
 //    }

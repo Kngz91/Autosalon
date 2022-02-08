@@ -11,6 +11,7 @@ public class Main {
         Interface.hat();
         System.out.println("Мы поможем Вам подобрать лучший вариант. Каков Ваш бюджет?");
         Autosalon.budgetSet();
+        Interface.choiceNumber();
 
 
 //
