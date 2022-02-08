@@ -13,19 +13,8 @@ public class Main {
         Autosalon.budgetSet();
 
 
+//
 
-//        Interface.clearScreen();
-//        boolean exit = false;
-//        while !exit {
-//            Scanner scanner = new Scanner(System.in);
-//            int choice = scanner.nextInt();
-//            switch (choice):
-//            case 1:
-            Interface.choice();
-//            break;
-//            case 2:
-//                exit = true;
-//                break;
         }
     }
 

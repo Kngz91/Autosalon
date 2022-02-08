@@ -7,8 +7,7 @@ public class Interface {
 
 
     public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        boolean exit = true;
     }
 
     public static void menu(){
@@ -24,18 +23,42 @@ public class Interface {
         System.out.println("..........................................................");
     }
 
-    public static int choice() {
+    public static int choice2() {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         if (number == 1) {
             choiseYearSearch();
         }if (number == 2){
             choisePriceSearch();
+        }if (number == 3){
+            Autosalon.addCars();
+        }if (number ==4){
+            clearScreen();
         }
+
         return number;
     }
 
-    public static void choiseYearSearch(){
+    public static void choiseNumber() {
+//        boolean exit = false;
+//        while !exit {
+//        Scanner scanner = new Scanner(System.in);
+//        int choice = scanner.nextInt();
+//            switch (choice):
+//              choiseYearSearch();
+//              break;
+//              case 2 (choise ==2):
+//              choisePriceSearch();
+//              break;
+//              case 3  (choise ==3):
+//              addCars();
+//              break;
+//              case 4  (choise ==0)
+//              exit = true;
+//              break;
+    }
+
+        public static void choiseYearSearch(){
         Scanner scanner = new Scanner(System.in);
             int result1=0;
             System.out.println("Выполняем подбор авто по году выпуска");
