@@ -24,7 +24,7 @@ public class Autosalon {
             int year = scanner.nextInt();
             System.out.println("Введите страну-производителя " + (i + 1) + " машины");
             String country = scanner.next();
-            Car newCar = new Car(model,year,engine,price,country);
+            Car newCar = new Car(model, year, engine, price, country);
             cars.add(newCar);
 
         }
@@ -61,17 +61,7 @@ public class Autosalon {
             }
         }
     }
-
-
-
-
-//        while (budgetSet() < Car.getPrice()) {
-//            if (budgetSet() >= Car.getPrice()) {
-//                System.out.println("Вот авто которые вы можете себе позволить:"); //через for пройти по массиву , через if вывести подходящие
-////                вывод подходящих машин
-//            } else {
-//                System.out.println("В парке нет авто, подходящих вашему бюджету");
-//            }
-//        }
-//    }
 }
+
+
+
