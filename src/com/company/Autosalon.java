@@ -1,9 +1,9 @@
 package com.company;
-
+import static com.company.Car.cars;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.company.Car.cars;
+
 
 public class Autosalon {
 
