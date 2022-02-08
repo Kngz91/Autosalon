@@ -2,13 +2,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Interface {
-
-
-    public static void clearScreen() {
-        boolean exit = true;
-    }
 
     public static void menu(){
         System.out.println("1. Подбор авто по году выпуска");
@@ -22,8 +16,6 @@ public class Interface {
         System.out.println(":        Добро пожаловать в автосалон Java-Motors.       :");
         System.out.println("..........................................................");
     }
-
-
 
     public static void choiceNumber() {
         boolean exit = false;
@@ -62,7 +54,6 @@ public class Interface {
             }
         }
     }
-
 
     public static void choicePriceSearch(){
         System.out.println("Выполняем подбор авто по стоимости");
