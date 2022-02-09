@@ -1,5 +1,5 @@
 package com.company;
-import static com.company.Car.cars;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,6 +7,19 @@ import java.util.Scanner;
 
 public class Autosalon {
 
+    static ArrayList<Car> cars = new ArrayList<>();
+
+    public void createCars() {
+        cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
+        cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
+        cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
+        cars.add(new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
+        cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
+        cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
+        cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
+        cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
+        cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
+    }
 
     public static void addCars() {
         Scanner scanner = new Scanner(System.in);
@@ -52,14 +65,37 @@ public class Autosalon {
 //        return ();
 //    }
 
-    public static void priceSearch() {
+    public static void choiceYearSearch() {
+        Scanner scanner = new Scanner(System.in);
+        int result1 = 0;
+        System.out.println("Выполняем подбор авто по году выпуска");
+        System.out.println("Введите желаемый год");
+        int yearIn = scanner.nextInt();
         for (int i = 0; i < cars.size(); i++) {
+            if (yearIn == Car.getYear()) {
+                yearIn = result1;
+                System.out.println("Машина с указанным годом найдена: ");
+            } else {
+                System.out.println("К сожалению машины указанного года в нашем парке нет");
+            }
+        }
+    }
+
+    public static void priceSearch() {
+        System.out.println("Выполняем подбор авто по стоимости");
+        for (int suiteCar: cars) {
             if (budgetSet() >= Car.getPrice()) {
+                suiteCar = Car.getPrice();
                 Car.carInfo();
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");
             }
         }
+    }
+
+    public void choicePriceSearch(){
+//        System.out.println("Выполняем подбор авто по стоимости");
+        Autosalon.priceSearch();
     }
 }
 

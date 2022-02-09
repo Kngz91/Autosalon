@@ -23,42 +23,28 @@ public class Interface {
             Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
             switch (choice) {
-                case 1: choice = 1;
-                    choiceYearSearch();
+                case (1):
+                    Autosalon.choiceYearSearch();
                     break;
-                case 2: choice = 2;
-                    choicePriceSearch();
+                case (2):
+                    Autosalon.priceSearch();
                     break;
-                case 3: choice = 3;
+                case (3):
                     Autosalon.addCars();
                     break;
-                case 4: choice = 0;
+                case (4):
                     exit = true;
+                    break;
+                default:
+                    System.out.println("Попробуйте еще раз");
                     break;
             }
         }
     }
 
-    public static void choiceYearSearch() {
-        Scanner scanner = new Scanner(System.in);
-        int result1 = 0;
-        System.out.println("Выполняем подбор авто по году выпуска");
-        System.out.println("Введите желаемый год");
-        int yearIn = scanner.nextInt();
-        for (int i = 0; i < Car.cars.size(); i++) {
-            if (yearIn == Car.getYear()) {
-                yearIn = result1;
-                System.out.println("Машина с указанным годом найдена: ");
-            } else {
-                System.out.println("К сожалению машины указанного года в нашем парке нет");
-            }
-        }
-    }
 
-    public static void choicePriceSearch(){
-        System.out.println("Выполняем подбор авто по стоимости");
-        Autosalon.priceSearch();
-    }
+
+
 }
 
 
