@@ -1,23 +1,23 @@
 package com.company;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
-public class Interface {
+class Interface {
 
-    public static void menu(){
+    static void menu(){
         System.out.println("1. Подбор авто по году выпуска");
         System.out.println("2. Подбор авто по стоимости");
         System.out.println("3. Сдать машину в Trade-In");
         System.out.println("4. Выход");
     }
 
-    public static void hat (){
+    static void hat(){
         System.out.println("..........................................................");
         System.out.println(":        Добро пожаловать в автосалон Java-Motors.       :");
         System.out.println("..........................................................");
     }
 
-    public static void choiceNumber() {
+    static void choiceNumber() {
         boolean exit = false;
         while (!exit) {
             Scanner scanner = new Scanner(System.in);

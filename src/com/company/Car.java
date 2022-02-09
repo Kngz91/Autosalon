@@ -1,7 +1,7 @@
 package com.company;
 
 
-public class Car {
+class Car {
 
     private static String country;
     private static String model;
@@ -9,30 +9,30 @@ public class Car {
     private static double engine;
     private static int price;
 
-    public static void carInfo(){
+    static void carInfo(){
         System.out.println(getModel() + " " + getYear() + " "
                 + getEngine() + " " + getPrice() + " " + getCountry());
     }
 
-    public Car(String model, int year, double engine, int price, String country ) {
-        this.model = model;
-        this.year = year;
-        this.engine = engine;
-        this.price = price;
-        this.country = country;
+    Car(String model, int year, double engine, int price, String country) {
+        Car.model = model;
+        Car.year = year;
+        Car.engine = engine;
+        Car.price = price;
+        Car.country = country;
     }
 
-    public static int getYear() {
+    static int getYear() {
             return year;
     }
 
-    public static String getModel() { return model; }
+    private static String getModel() { return model; }
 
-    public static double getEngine() {
+    private static double getEngine() {
             return engine;
     }
 
-    public static int getPrice() { return price; }
+    static int getPrice() { return price; }
 
-    public static String getCountry() { return country; }
+    private static String getCountry() { return country; }
 }
