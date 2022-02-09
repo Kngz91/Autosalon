@@ -9,9 +9,8 @@ class Car {
     private static double engine;
     private static int price;
 
-    static void carInfo(){
-        System.out.println(getModel() + " " + getYear() + " "
-                + getEngine() + " " + getPrice() + " " + getCountry());
+    static String carInfo(){
+        return (getModel() + " " + getYear() + " " + getEngine() + " " + getPrice() + " " + getCountry());
     }
 
     Car(String model, int year, double engine, int price, String country) {
@@ -23,16 +22,22 @@ class Car {
     }
 
     static int getYear() {
-            return year;
+        return year;
     }
 
-    private static String getModel() { return model; }
+    private static String getModel() {
+        return model;
+    }
 
     private static double getEngine() {
-            return engine;
+        return engine;
     }
 
-    static int getPrice() { return price; }
+    static int getPrice() {
+        return price;
+    }
 
-    private static String getCountry() { return country; }
+    private static String getCountry() {
+        return country;
+    }
 }
