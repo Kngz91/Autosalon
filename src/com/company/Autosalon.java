@@ -3,11 +3,13 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.company.Car.carInfo;
+import static com.company.Car.getPrice;
 
 
 class Autosalon {
 
-    private static ArrayList<Car> cars = new ArrayList<>();
+    public static ArrayList<Car> cars = new ArrayList<>();
 
     void createCars() {
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
@@ -67,14 +69,12 @@ class Autosalon {
 
     static void choiceYearSearch() {
         Scanner scanner = new Scanner(System.in);
-        int result1 = 0;
         System.out.println("Выполняем подбор авто по году выпуска");
         System.out.println("Введите желаемый год");
-        int yearIn = scanner.nextInt();
+        int year = scanner.nextInt();
         for (int i = 0; i < cars.size(); i++) {
-            if (yearIn == Car.getYear()) {
-                yearIn = result1;
-                System.out.println("Машина с указанным годом найдена: ");
+            if (year == cars[i].getYear()) {
+                System.out.println(i + "Машина с указанным годом найдена: ");
             } else {
                 System.out.println("К сожалению машины указанного года в нашем парке нет");
             }
@@ -84,8 +84,8 @@ class Autosalon {
     static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости");
         for (int i = 0; i < cars.size(); i++) {
-            if (budgetSet() >= Car.getPrice()) {
-                Car.carInfo();
+            if (budgetSet() >= cars[i].getPrice()) {
+                cars[i].carInfo();
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");
             }
