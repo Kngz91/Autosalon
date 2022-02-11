@@ -9,11 +9,11 @@ class Car {
     private static double engine;
     private static int price;
 
-    static String carInfo(){
+    public String carInfo(){
         return (getModel() + " " + getYear() + " " + getEngine() + " " + getPrice() + " " + getCountry());
     }
 
-    Car(String model, int year, double engine, int price, String country) {
+    public Car(String model, int year, double engine, int price, String country) {
         Car.model = model;
         Car.year = year;
         Car.engine = engine;
@@ -27,23 +27,23 @@ class Car {
     public void setPrice(int price){
         this.price = price;
     }
-    static int getYear() {
+    public int getYear() {
         return year;
     }
 
-    private static String getModel() {
+    public String getModel() {
         return model;
     }
 
-    private static double getEngine() {
+    public double getEngine() {
         return engine;
     }
 
-    static int getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    private static String getCountry() {
+    public String getCountry() {
         return country;
     }
 }

@@ -1,6 +1,8 @@
 package com.company;
-
+import com.company.Autosalon.*;
 import java.util.Scanner;
+
+import static com.company.Autosalon.*;
 
 class Interface {
 
@@ -17,20 +19,20 @@ class Interface {
         System.out.println("..........................................................");
     }
 
-    static void choiceNumber() {
+    public static void choiceNumber() {
         boolean exit = false;
         while (!exit) {
             Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
             switch (choice) {
                 case (1):
-                    Autosalon.choiceYearSearch();
+                    choiceYearSearch();
                     break;
                 case (2):
-                    Autosalon.priceSearch();
+                    priceSearch();
                     break;
                 case (3):
-                    Autosalon.addCars();
+                    addCars();
                     break;
                 case (4):
                     exit = true;
@@ -48,16 +50,7 @@ class Interface {
 }
 
 
-//
-//            priceSearch();
-//        }if (number == 3) {
-//            System.out.println("У нас лучшие цены! Расскажите подробнее.");
-//            addCars();
-//
-//        }else{
-//            System.out.println("Некорректный ввод,выберите номер пункта из списка");
-//        }
-//    }
+
 
 
 //    public static void erase (){
@@ -66,18 +59,3 @@ class Interface {
 //        }
 //    }
 
-//    public static int choice2() {
-//        Scanner scanner = new Scanner(System.in);
-//        int number = scanner.nextInt();
-//        if (number == 1) {
-//            choiceYearSearch();
-//        }if (number == 2){
-//            choicePriceSearch();
-//        }if (number == 3){
-//            Autosalon.addCars();
-//        }if (number ==4){
-//            clearScreen();
-//        }
-//
-//        return number;
-//    }

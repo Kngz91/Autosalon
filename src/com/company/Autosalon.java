@@ -2,16 +2,15 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import static com.company.Interface.*;
 
-import static com.company.Car.carInfo;
-import static com.company.Car.getPrice;
 
 
 class Autosalon {
 
     public static ArrayList<Car> cars = new ArrayList<>();
 
-    void createCars() {
+    public void createCars() {
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
         cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
@@ -23,7 +22,7 @@ class Autosalon {
         cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
     }
 
-    static void addCars() {
+    public static void addCars() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество сдаваемых машин");
         int n = scanner.nextInt();
@@ -48,7 +47,7 @@ class Autosalon {
 //    public void maxPrice() {
 //    }
 
-    static int budgetSet() {
+    public static int budgetSet() {
         Scanner scanner = new Scanner(System.in);
         int budget = 0;
         while (budget <= 0) {
@@ -64,10 +63,10 @@ class Autosalon {
     }
 
 //    public static int getBudget(){
-//        return ();
+//        return budget();
 //    }
 
-    static void choiceYearSearch() {
+    public static void choiceYearSearch() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выполняем подбор авто по году выпуска");
         System.out.println("Введите желаемый год");
@@ -81,7 +80,7 @@ class Autosalon {
         }
     }
 
-    static void priceSearch() {
+    public static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости");
         for (int i = 0; i < cars.size(); i++) {
             if (budgetSet() >= cars[i].getPrice()) {
