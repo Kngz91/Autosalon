@@ -12,6 +12,7 @@ import static com.company.Interface.*;
 class Autosalon {
 
 
+    private static int budget;
 
     public void createCars() {              //Переписать в коллекцию
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
@@ -50,24 +51,24 @@ class Autosalon {
 //    public void maxPrice() {
 //    }
 
-    public static int budgetSet() {
+    public static void budgetSet() {
         Scanner scanner = new Scanner(System.in);
-        int budget = 0;
+        System.out.println("Каким бюджетом располагаете?");
         while (budget <= 0) {
             budget = scanner.nextInt();
             if (budget <= 0) {
                 System.out.println("Ваш бюджет должен быть положительным");
             } else {
-                System.out.println("Отлично! Вот что мы можем предложить (выберите номер):");
-                Interface.menu();
+                System.out.println("Отлично! Вот что мы можем предложить ");
+                priceSearch();
             }
         }
-        return budget;
+
     }
 
-//    public int getBudget(){
-//        return budget();
-//    }
+    public static int getBudget(){
+        return budget;
+    }
 
     public static void choiceYearSearch() {
         Scanner scanner = new Scanner(System.in);
@@ -75,6 +76,7 @@ class Autosalon {
         System.out.println("Введите желаемый год");
         int year = scanner.nextInt();
         for (int i = 0; i < cars.size(); i++) {
+//            while
             if (year == cars.get(i).getYear()) {                                //Нужен While
                 System.out.println(i + "Машина с указанным годом найдена: ");
             } else {
@@ -85,10 +87,9 @@ class Autosalon {
     }
 
     public static void priceSearch() {
-        System.out.println("Выполняем подбор авто по стоимости");
-//        int i = ;
+        System.out.println("Выполняем подбор авто по стоимости:");
         for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i).getPrice() <= 5000)  {
+            if (cars.get(i).getPrice() <= getBudget())  {              //переписать budget
                 System.out.println(cars.get(i).carInfo());
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");

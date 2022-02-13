@@ -29,7 +29,7 @@ class Interface {
                     choiceYearSearch();
                     break;
                 case (2):
-                    priceSearch();
+                    budgetSet();
                     break;
                 case (3):
                     addCars();
