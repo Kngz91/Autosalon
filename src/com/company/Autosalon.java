@@ -75,19 +75,21 @@ class Autosalon {
         System.out.println("Введите желаемый год");
         int year = scanner.nextInt();
         for (int i = 0; i < cars.size(); i++) {
-            if (year == cars.get(i).getYear()) {
+            if (year == cars.get(i).getYear()) {                                //Нужен While
                 System.out.println(i + "Машина с указанным годом найдена: ");
             } else {
                 System.out.println("К сожалению машины указанного года в нашем парке нет");
+                break;
             }
         }
     }
 
     public static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости");
+//        int i = ;
         for (int i = 0; i < cars.size(); i++) {
-            if (budgetSet() >= cars.get(i).getPrice()) {
-                cars.get(i).carInfo();
+            if (cars.get(i).getPrice() <= 5000)  {
+                System.out.println(cars.get(i).carInfo());
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");
             }
