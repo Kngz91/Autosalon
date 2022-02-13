@@ -1,25 +1,27 @@
 package com.company;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static com.company.Car.cars;
 import static com.company.Interface.*;
 
 
 
 class Autosalon {
 
-    public static ArrayList<Car> cars = new ArrayList<>();
 
-    public void createCars() {
-        cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
+
+    public void createCars() {              //Переписать в коллекцию
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
         cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
         cars.add(new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
         cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
         cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
         cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
-        cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
         cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
+        cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
     }
 
     public static void addCars() {
@@ -40,6 +42,7 @@ class Autosalon {
             String country = scanner.next();
             Car newCar = new Car(model, year, engine, price, country);
             cars.add(newCar);
+
 
         }
     }
@@ -62,7 +65,7 @@ class Autosalon {
         return budget;
     }
 
-//    public static int getBudget(){
+//    public int getBudget(){
 //        return budget();
 //    }
 
@@ -72,7 +75,7 @@ class Autosalon {
         System.out.println("Введите желаемый год");
         int year = scanner.nextInt();
         for (int i = 0; i < cars.size(); i++) {
-            if (year == cars[i].getYear()) {
+            if (year == cars.get(i).getYear()) {
                 System.out.println(i + "Машина с указанным годом найдена: ");
             } else {
                 System.out.println("К сожалению машины указанного года в нашем парке нет");
@@ -83,8 +86,8 @@ class Autosalon {
     public static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости");
         for (int i = 0; i < cars.size(); i++) {
-            if (budgetSet() >= cars[i].getPrice()) {
-                cars[i].carInfo();
+            if (budgetSet() >= cars.get(i).getPrice()) {
+                cars.get(i).carInfo();
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");
             }

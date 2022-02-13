@@ -1,7 +1,11 @@
 package com.company;
 
 
+import java.util.ArrayList;
+
 class Car {
+
+    public static ArrayList<Car> cars = new ArrayList<>(20);
 
     private static String country;
     private static String model;
