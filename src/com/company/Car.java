@@ -13,6 +13,9 @@ class Car {
     private static double engine;
     private static int price;
 
+    public String toString(){
+        return model + " " + year + " " + engine + " " + price + " " + country;
+    }
     public String carInfo(){
         return (getModel() + " " + getYear() + " " + getEngine() + " " + getPrice() + " " + getCountry());
     }

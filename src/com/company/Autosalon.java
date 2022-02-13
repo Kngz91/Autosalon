@@ -4,6 +4,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.company.Autosalon.yesno;
 import static com.company.Car.cars;
 import static com.company.Interface.*;
 
@@ -43,19 +44,20 @@ class Autosalon {
             String country = scanner.next();
             Car newCar = new Car(model, year, engine, price, country);
             cars.add(newCar);
+            budget+=newCar.getPrice();
+            System.out.println("Машина принята, ваш бюджет увеличен на "+newCar.getPrice()+" $");
+            menu();
+            choiceNumber();
 
 
         }
     }
 
-//    public void maxPrice() {
-//    }
-
     public static void budgetSet() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Каким бюджетом располагаете?");
+        budget+=scanner.nextInt();
         while (budget <= 0) {
-            budget = scanner.nextInt();
             if (budget <= 0) {
                 System.out.println("Ваш бюджет должен быть положительным");
             } else {
@@ -64,6 +66,10 @@ class Autosalon {
             }
         }
 
+        if (budget>0){
+            System.out.println("Отлично! Вот что мы можем предложить ");
+            priceSearch();
+        }
     }
 
     public static int getBudget(){
@@ -81,7 +87,27 @@ class Autosalon {
                 System.out.println(i + "Машина с указанным годом найдена: ");
             } else {
                 System.out.println("К сожалению машины указанного года в нашем парке нет");
-                break;
+                System.out.println("Повторить поиск с другим годом выпуска? Y/N");
+                yesno();
+            }
+        }
+    }
+
+    public static void yesno(){
+        boolean exit = false;
+        while (!exit) {
+            Scanner scanner = new Scanner(System.in);
+            String yn = scanner.nextLine();
+            switch (yn) {
+                case ("y"):
+                    choiceYearSearch();
+                    break;
+                case ("n"):
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Попробуйте еще раз");
+                    break;
             }
         }
     }
@@ -96,12 +122,7 @@ class Autosalon {
             }
         }
     }
-
-
 }
-//    public void choicePriceSearch(){
-//        System.out.println("Выполняем подбор авто по стоимости");
-//        Autosalon.priceSearch();
 
 
 
