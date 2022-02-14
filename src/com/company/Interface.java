@@ -47,7 +47,7 @@ class Interface {
     }
 
 
-    public static void yesno() {
+    public static void yesnoYearSearch() {
         boolean exit = false;
 
         while (!exit) {

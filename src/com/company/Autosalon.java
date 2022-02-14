@@ -24,19 +24,19 @@ class Autosalon {
 
     public static void addCars() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите количество сдаваемых машин");
-        int n = scanner.nextInt();
-
-        for (int i = 0; i < n; i++) {
-            System.out.println("Введите марку " + (i + 1) + " машины");
+//        System.out.println("Введите количество сдаваемых машин");
+//        int n = scanner.nextInt();
+//        + (i + 1) + "-й машины"
+//        for (int i = 0; i < n; i++) {
+            System.out.println("Укажите марку ");
             String model = scanner.next();
-            System.out.println("Введите цену " + (i + 1) + " машины");
+            System.out.println("Укажите цену ");
             int price = scanner.nextInt();
-            System.out.println("Введите объем двигателя " + (i + 1) + " машины");
+            System.out.println("Укажите объем двигателя ");
             double engine = scanner.nextDouble();
-            System.out.println("Введите год производства " + (i + 1) + " машины");
+            System.out.println("Укажите год производства ");
             int year = scanner.nextInt();
-            System.out.println("Введите страну-производителя " + (i + 1) + " машины");
+            System.out.println("Укажите страну-производителя ");
             String country = scanner.next();
             Car newCar = new Car(model, year, engine, price, country);
             cars.add(newCar);
@@ -47,17 +47,16 @@ class Autosalon {
 
 
         }
-    }
+
 
     public static void budgetSet() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Каким бюджетом располагаете?");
+        System.out.println("Каким бюджетом располагаете? (Без учета Trade-In)");
         budget += scanner.nextInt();
         while (budget <= 0) {
             if (budget <= 0) {
                 System.out.println("Ваш бюджет должен быть положительным");
             } else {
-                System.out.println("Отлично! Вот что мы можем предложить ");
                 priceSearch();
             }
         }
@@ -80,12 +79,13 @@ class Autosalon {
         for (int i = 0; i < cars.size(); i++) {
             while (!exit) {
                 if (year == cars.get(i).getYear()) {                                //Нужен While
-                    System.out.println(i + "Машина с указанным годом найдена: ");
+                    System.out.println((i+1)+" " + "Машина с указанным годом найдена: ");
+                    System.out.println(cars.get(i).carInfo());
                     break;
                 } else {
                     System.out.println("К сожалению машины указанного года в нашем парке нет");
                     System.out.println("Повторить поиск с другим годом выпуска? Y/N");
-                    yesno();
+                    yesnoYearSearch();
                     exit = true;
                 }
             }
@@ -98,6 +98,7 @@ class Autosalon {
         for (int i = 0; i < cars.size(); i++) {
             while (!exit) {
                 if (cars.get(i).getPrice() <= getBudget()) {
+                    System.out.println("Вот что мы можем предложить:");
                     System.out.println(cars.get(i).carInfo());
                     break;
                 } else {
@@ -111,6 +112,8 @@ class Autosalon {
         }
     }
 }
+
+
 
 
 

@@ -17,7 +17,7 @@ class Car {
         return model + " " + year + " " + engine + " " + price + " " + country;
     }
     public String carInfo(){
-        return (getModel() + " " + getYear() + " " + getEngine() + " " + getPrice() + " " + getCountry());
+        return (getModel() + " " + getYear() + "г.в " + getEngine() + "L " + getPrice() + "$ " + getCountry());
     }
 
     public Car(String model, int year, double engine, int price, String country) {
