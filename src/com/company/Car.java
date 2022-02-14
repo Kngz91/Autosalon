@@ -28,15 +28,13 @@ class Car {
         Car.country = country;
     }
 
-    public void setYear(int year){
-        this.year = year;
-    }
-    public void setPrice(int price){
-        this.price = price;
-    }
-    public int getYear() {
-        return year;
-    }
+//    public void setYear(int year){
+//        this.year = year;
+//    }
+//    public void setPrice(int price){
+//        this.price = price;
+//    }
+    public int getYear() {return year;}
 
     public String getModel() {
         return model;
