@@ -81,14 +81,17 @@ class Autosalon {
         System.out.println("Выполняем подбор авто по году выпуска");
         System.out.println("Введите желаемый год");
         int year = scanner.nextInt();
+        boolean exit = false;
         for (int i = 0; i < cars.size(); i++) {
-//            while
-            if (year == cars.get(i).getYear()) {                                //Нужен While
-                System.out.println(i + "Машина с указанным годом найдена: ");
-            } else {
-                System.out.println("К сожалению машины указанного года в нашем парке нет");
-                System.out.println("Повторить поиск с другим годом выпуска? Y/N");
-                yesno();
+            while (!exit) {
+                if (year == cars.get(i).getYear()) {                                //Нужен While
+                    System.out.println(i + "Машина с указанным годом найдена: ");
+                } else {
+                    System.out.println("К сожалению машины указанного года в нашем парке нет");
+                    System.out.println("Повторить поиск с другим годом выпуска? Y/N");
+                    yesno();
+                    exit = true;
+                }
             }
         }
     }
