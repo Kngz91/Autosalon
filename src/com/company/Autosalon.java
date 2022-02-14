@@ -44,8 +44,8 @@ class Autosalon {
             String country = scanner.next();
             Car newCar = new Car(model, year, engine, price, country);
             cars.add(newCar);
-            budget+=newCar.getPrice();
-            System.out.println("Машина принята, ваш бюджет увеличен на "+newCar.getPrice()+" $");
+            budget += newCar.getPrice();
+            System.out.println("Машина принята, ваш бюджет увеличен на " + newCar.getPrice() + " $");
             menu();
             choiceNumber();
 
@@ -56,7 +56,7 @@ class Autosalon {
     public static void budgetSet() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Каким бюджетом располагаете?");
-        budget+=scanner.nextInt();
+        budget += scanner.nextInt();
         while (budget <= 0) {
             if (budget <= 0) {
                 System.out.println("Ваш бюджет должен быть положительным");
@@ -66,13 +66,12 @@ class Autosalon {
             }
         }
 
-        if (budget>0){
-            System.out.println("Отлично! Вот что мы можем предложить ");
+        if (budget > 0) {
             priceSearch();
         }
     }
 
-    public static int getBudget(){
+    public static int getBudget() {
         return budget;
     }
 
@@ -98,11 +97,19 @@ class Autosalon {
 
     public static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости:");
+        boolean exit = false;
         for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i).getPrice() <= getBudget())  {
-                System.out.println(cars.get(i).carInfo());
-            } else {
-                System.out.println("В парке нет авто, подходящих вашему бюджету");
+            while (!exit) {
+                if (cars.get(i).getPrice() <= getBudget()) {
+                    System.out.println(cars.get(i).carInfo());
+                    break;
+                } else {
+                    System.out.println("В парке нет авто, подходящих вашему бюджету");
+                    System.out.println("Выполнить поиск с другим бюджетом? Y/N");
+                    yesnoPriceSearch();
+                    exit = true;
+
+                }
             }
         }
     }
