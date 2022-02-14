@@ -11,15 +11,19 @@ class Autosalon {
 
     private static int budget;
 
-    public void createCars() {              //Переписать в коллекцию
-        cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
-        cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
-        cars.add(new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
-        cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
-        cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
-        cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
-        cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
-        cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
+    public void createCars() {
+        Car car1 = new Car ("Honda CR-V", 2007, 2.0, 4000, "Japan");
+        cars.add(0, car1);
+        Car car2 = new Car ("Toyota Camry", 2012, 2.5, 3500, "Japan");
+        cars.add(1, car2);
+//        cars.add(0, new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
+//        cars.add(1, new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
+//        cars.add(2, new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
+//        cars.add(3, new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
+//        cars.add(4, new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
+//        cars.add(5, new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
+//        cars.add(6, new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
+//        cars.add(7, new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
     }
 
     public static void addCars() {

@@ -1,5 +1,6 @@
 package com.company;
 
+import static com.company.Car.cars;
 import static com.company.Interface.*;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
         Autosalon autosalon = new Autosalon();
         autosalon.createCars();
 
-//        System.out.println(cars.toString());
+        System.out.println(cars.size());
         hat();
         menu();
 //        System.out.println("Мы поможем Вам подобрать лучший вариант. Каков Ваш бюджет?");
