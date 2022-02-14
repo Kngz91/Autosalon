@@ -4,7 +4,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.company.Autosalon.yesno;
+
 import static com.company.Car.cars;
 import static com.company.Interface.*;
 
@@ -93,29 +93,10 @@ class Autosalon {
         }
     }
 
-    public static void yesno(){
-        boolean exit = false;
-        while (!exit) {
-            Scanner scanner = new Scanner(System.in);
-            String yn = scanner.nextLine();
-            switch (yn) {
-                case ("y"):
-                    choiceYearSearch();
-                    break;
-                case ("n"):
-                    exit = true;
-                    break;
-                default:
-                    System.out.println("Попробуйте еще раз");
-                    break;
-            }
-        }
-    }
-
     public static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости:");
         for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i).getPrice() <= getBudget())  {              //переписать budget
+            if (cars.get(i).getPrice() <= getBudget())  {
                 System.out.println(cars.get(i).carInfo());
             } else {
                 System.out.println("В парке нет авто, подходящих вашему бюджету");

@@ -1,8 +1,10 @@
 package com.company;
-import com.company.Autosalon.*;
+
 import java.util.Scanner;
 
 import static com.company.Autosalon.*;
+
+
 
 class Interface {
 
@@ -44,6 +46,28 @@ class Interface {
         }
     }
 
+
+
+    public static void yesno(){
+        boolean exit = false;
+
+        while (!exit) {
+            Scanner scanner = new Scanner(System.in);
+            String value = scanner.next();
+            switch (value) {
+                case ("y"):
+                    choiceYearSearch();
+                    break;
+                case ("n"):
+                    exit = true;
+                    menu();
+                    break;
+                default:
+                    System.out.println("Попробуйте еще раз");
+                    break;
+            }
+        }
+    }
 
 
 
