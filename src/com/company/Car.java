@@ -23,7 +23,7 @@ class Car {
 
 
     public static void showCars() {
-        System.out.println(cars);
+//        System.out.println(cars.get(6).getPrice());
     }
 
     public String toString() {

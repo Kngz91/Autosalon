@@ -16,13 +16,14 @@ class Autosalon {
 
     public static void createCars() {
 
+        cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
         cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
         cars.add(new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
         cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
         cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
         cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
-        cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
+
         cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
     }
 
@@ -52,7 +53,7 @@ class Autosalon {
     public static void budgetSet() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Каким бюджетом располагаете? (Без учета Trade-In)");
-        budget = scanner.nextInt();
+        budget += scanner.nextInt();
         while (budget <= 0) {
             if (budget <= 0) {
                 System.out.println("Ваш бюджет должен быть положительным");
@@ -94,23 +95,38 @@ class Autosalon {
     public static void priceSearch() {
         System.out.println("Выполняем подбор авто по стоимости:");
         boolean exit = false;
-        for (int i = 0; i < cars.size(); i++) {
+//        for (int i = 0; i < cars.size(); i++) {
+//            while (!exit) {
+//                if (cars.get(i).getPrice() <= getBudget()) {
+//                    System.out.println("Вот что мы можем предложить:");
+//                    System.out.println(cars.get(i).carInfo());
+//                    break;
+//                } else {
+//                    System.out.println("В парке нет авто, подходящих вашему бюджету");
+//                    System.out.println("Выполнить поиск с другим бюджетом? Y/N");
+//                    yesnoPriceSearch();
+//                    exit = true;
+//
+//                }
+//            }
+//        }
+        for (Car t : cars) {
             while (!exit) {
-                if (cars.get(i).getPrice() <= getBudget()) {
-                    System.out.println("Вот что мы можем предложить:");
-                    System.out.println(cars.get(i).carInfo());
+                if (t.getPrice() <= getBudget()) {
+                    System.out.println(t.carInfo());
                     break;
                 } else {
-                    System.out.println("В парке нет авто, подходящих вашему бюджету");
+                    System.out.println("No coincidence");
                     System.out.println("Выполнить поиск с другим бюджетом? Y/N");
                     yesnoPriceSearch();
                     exit = true;
-
                 }
             }
         }
     }
 }
+
+
 
 
 
