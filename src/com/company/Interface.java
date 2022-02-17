@@ -1,7 +1,5 @@
 package com.company;
-
 import java.util.Scanner;
-
 import static com.company.Autosalon.*;
 
 
@@ -21,76 +19,75 @@ class Interface {
         System.out.println("..........................................................");
     }
 
-//    public static void choiceNumber() {
-//        boolean exit = false;
-//        while (!exit) {
-//            Scanner scanner = new Scanner(System.in);
-//            int choice = scanner.nextInt();
-//            switch (choice) {
-//                case (1):
-//                    choiceYearSearch();
-//                    break;
-//                case (2):
-//                    budgetSet();
-//                    break;
-//                case (3):
-//                    addCars();
-//                    break;
-//                case (4):
-//                    exit = true;
-//                    break;
-//                default:
-//                    System.out.println("Попробуйте еще раз");
-//                    break;
-//            }
-//        }
-//    }
-//
-//
-//    public static void yesnoYearSearch() {
-//        boolean exit = false;
-//
-//        while (!exit) {
-//            Scanner scanner = new Scanner(System.in);
-//            String value = scanner.next();
-//            switch (value) {
-//                case ("y"):
-//                    choiceYearSearch();
-//                    break;
-//                case ("n"):
-//                    exit = true;
-//                    menu();
-//                    break;
-//                default:
-//                    System.out.println("Попробуйте еще раз");
-//                    break;
-//            }
-//        }
-//    }
-//
-//    public static void yesnoPriceSearch() {
-//        boolean exit = false;
-//
-//        while (!exit) {
-//            Scanner scanner = new Scanner(System.in);
-//            String value = scanner.next();
-//            switch (value) {
-//                case ("y"):
-//                    budgetSet();
-//                    priceSearch();
-//                    break;
-//                case ("n"):
-//                    exit = true;
-//                    menu();
-//                    break;
-//                default:
-//                    System.out.println("Попробуйте еще раз");
-//                    break;
-//            }
-//        }
+    public static void choiceNumber() {
+        boolean exit = false;
+        while (!exit) {
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case (1):
+                    choiceYearSearch();
+                    break;
+                case (2):
+                    budgetSet();
+                    break;
+                case (3):
+                    addCars();
+                    break;
+                case (4):
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Попробуйте еще раз");
+                    break;
+            }
+        }
+    }
+
+
+    public static void yesnoYearSearch() {
+        boolean exit = false;
+        while (!exit) {
+            Scanner scanner = new Scanner(System.in);
+            String value = scanner.next();
+            switch (value) {
+                case ("y"):
+                    choiceYearSearch();
+                    break;
+                case ("n"):
+                    exit = true;
+                    menu();
+                    break;
+                default:
+                    System.out.println("Попробуйте еще раз");
+                    break;
+            }
+        }
+    }
+
+    public static void yesnoPriceSearch() {
+        boolean exit = false;
+
+        while (!exit) {
+            Scanner scanner = new Scanner(System.in);
+            String value = scanner.next();
+            switch (value) {
+                case ("y"):
+                    budgetSet();
+                    priceSearch();
+                    break;
+                case ("n"):
+                    exit = true;
+                    menu();
+                    break;
+                default:
+                    System.out.println("Попробуйте еще раз");
+                    break;
+            }
+        }
 
     }
-//}
+}
 
 
 

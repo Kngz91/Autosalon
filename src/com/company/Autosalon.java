@@ -13,21 +13,18 @@ class Autosalon {
     static List<Car> cars = new ArrayList<>();
     private static int budget;
 
-//    public static void showCars(){
-//        System.out.println(cars);
-//    }
 
-//    public static void createCars() {
-//
-//        cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
-//        cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
-//        cars.add(new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
-//        cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
-//        cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
-//        cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
-//        cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
-//        cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
-//    }
+    public static void createCars() {
+
+        cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
+        cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
+        cars.add(new Car("Honda HR-V", 2005, 1.6, 1500, "Japan"));
+        cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
+        cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
+        cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
+        cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
+        cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
+    }
 
     public static void addCars() {
         Scanner scanner = new Scanner(System.in);
@@ -45,30 +42,28 @@ class Autosalon {
             String country = scanner.next();
             Car newCar = new Car(model, year, engine, price, country);
             cars.add(newCar);
-//            budget += newCar.getPrice();
-//            System.out.println("Машина принята, ваш бюджет увеличен на " + newCar.getPrice() + " $");
+            budget += newCar.getPrice();
+            System.out.println("Машина принята, ваш бюджет увеличен на " + newCar.getPrice() + " $");
             menu();
-//            choiceNumber();
+            choiceNumber();
         }
     }
 
-
-//    public static void budgetSet() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Каким бюджетом располагаете? (Без учета Trade-In)");
-//        budget += scanner.nextInt();
-//        while (budget <= 0) {
-//            if (budget <= 0) {
-//                System.out.println("Ваш бюджет должен быть положительным");
-//            } else {
-//                priceSearch();
-//            }
-//        }
-//
-//        if (budget > 0) {
-//            priceSearch();
-//        }
-//    }
+    public static void budgetSet() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Каким бюджетом располагаете? (Без учета Trade-In)");
+        budget = scanner.nextInt();
+        while (budget <= 0) {
+            if (budget <= 0) {
+                System.out.println("Ваш бюджет должен быть положительным");
+            } else {
+                priceSearch();
+            }
+        }
+        if (budget > 0) {
+            priceSearch();
+        }
+    }
 
     public static int getBudget() {
         return budget;
@@ -82,40 +77,40 @@ class Autosalon {
         boolean exit = false;
         for (int i = 0; i < cars.size(); i++) {
             while (!exit) {
-//                if (year == cars.get(i).getYear()) {                                //Нужен While
+                if (year == cars.get(i).getYear()) {                                //Нужен While
                     System.out.println((i + 1) + " " + "Машина с указанным годом найдена: ");
-//                    System.out.println(cars.get(i).carInfo());
+                    System.out.println(cars.get(i).carInfo());
                     break;
-//                } else {
-//                    System.out.println("К сожалению машины указанного года в нашем парке нет");
-//                    System.out.println("Повторить поиск с другим годом выпуска? Y/N");
-//                    yesnoYearSearch();
-//                    exit = true;
+                } else {
+                    System.out.println("К сожалению машины указанного года в нашем парке нет");
+                    System.out.println("Повторить поиск с другим годом выпуска? Y/N");
+                    yesnoYearSearch();
+                    exit = true;
                 }
             }
         }
     }
 
-//    public static void priceSearch() {
-//        System.out.println("Выполняем подбор авто по стоимости:");
-//        boolean exit = false;
-//        for (int i = 0; i < cars.size(); i++) {
-//            while (!exit) {
-////                if (cars.get(i).getPrice() <= getBudget()) {
-//                    System.out.println("Вот что мы можем предложить:");
-////                    System.out.println(cars.get(i).carInfo());
-//                    break;
-//                } else {
-//                    System.out.println("В парке нет авто, подходящих вашему бюджету");
-//                    System.out.println("Выполнить поиск с другим бюджетом? Y/N");
-//                    yesnoPriceSearch();
-//                    exit = true;
-//
-//                }
-//            }
-//        }
-//    }
-//}
+    public static void priceSearch() {
+        System.out.println("Выполняем подбор авто по стоимости:");
+        boolean exit = false;
+        for (int i = 0; i < cars.size(); i++) {
+            while (!exit) {
+                if (cars.get(i).getPrice() <= getBudget()) {
+                    System.out.println("Вот что мы можем предложить:");
+                    System.out.println(cars.get(i).carInfo());
+                    break;
+                } else {
+                    System.out.println("В парке нет авто, подходящих вашему бюджету");
+                    System.out.println("Выполнить поиск с другим бюджетом? Y/N");
+                    yesnoPriceSearch();
+                    exit = true;
+
+                }
+            }
+        }
+    }
+}
 
 
 
