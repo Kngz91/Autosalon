@@ -89,29 +89,12 @@ class Autosalon {
     }
 
     public void priceSearch() {
-//        System.out.println("Выполняем подбор авто по стоимости:");
         boolean exit = false;
-//        for (int i = 0; i < cars.size(); i++) {
-//            while (!exit) {
-//                if (cars.get(i).getPrice() <= getBudget()) {
-//                    System.out.println("Вот что мы можем предложить:");
-//                    System.out.println(cars.get(i).carInfo());
-//                    break;
-//                } else {
-//                    System.out.println("В парке нет авто, подходящих вашему бюджету");
-//                    System.out.println("Выполнить поиск с другим бюджетом? Y/N");
-//                    yesnoPriceSearch();
-//                    exit = true;
-//
-//                }
-//            }
-//        }
         Scanner scanner = new Scanner(System.in);
-
         while (!exit) {
             System.out.println("Введите желаемый бюджет: ");
             int budget = scanner.nextInt();
-
+            System.out.println("Выполняем подбор авто по стоимости:");
             List<Car> budgetCars = new ArrayList<Car>();
             for (Car car : cars) {
                 if (car.getPrice() <= budget) {
@@ -120,12 +103,11 @@ class Autosalon {
             }
 
             if (budgetCars.size() == 0) {
-                System.out.println("No coincidence");
+                System.out.println("К сожалению, подходящих машин нет");
                 System.out.println("Выполнить поиск с другим бюджетом? Y/N");
 
-
                 String value = scanner.next();
-                if (value == "n") {
+                if (value.equals("n")) {
                     exit = true;
                 }
             } else {
