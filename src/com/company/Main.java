@@ -1,8 +1,4 @@
 package com.company;
-import java.util.ArrayList;
-import java.util.List;
-import static com.company.Autosalon.cars;
-import static com.company.Car.*;
 import static com.company.Interface.*;
 
 public class Main {

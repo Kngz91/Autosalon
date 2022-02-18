@@ -55,16 +55,15 @@ class Autosalon {
         System.out.println("Каким бюджетом располагаете? (Без учета Trade-In)");
         budget += scanner.nextInt();
         while (budget <= 0) {
-            if (budget <= 0) {
+            if (budget < 0) {
                 System.out.println("Ваш бюджет должен быть положительным");
             } else {
                 priceSearch();
             }
         }
-        if (budget > 0) {
-            priceSearch();
-        }
+
     }
+
 
     public static int getBudget() {
         return budget;

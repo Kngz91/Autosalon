@@ -1,9 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.company.Autosalon.cars;
 
 class Car {
 
