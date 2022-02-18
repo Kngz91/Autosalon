@@ -17,19 +17,17 @@ class Car {
         this.country = country;
     }
 
-
-    public static void showCars() {
-//        System.out.println(cars.get(6).getPrice());
+    public String carInfo(){
+        return (getModel() + " " + getYear() + "г.в " + getEngine() + "L " + getPrice() + "$ " + getCountry());
     }
+
+    /*  */
 
     public String toString() {
         return model + " " + year + " " + engine + " " + price + " " + country;
     }
 
-
-    public String carInfo(){
-        return (getModel() + " " + getYear() + "г.в " + getEngine() + "L " + getPrice() + "$ " + getCountry());
-    }
+    /* Getters */
 
     public int getYear() {
         return year;
@@ -51,7 +49,6 @@ class Car {
         return country;
     }
 }
-
 
 
 //    public void setYear(int year){

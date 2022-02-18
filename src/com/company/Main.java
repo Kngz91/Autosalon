@@ -1,14 +1,19 @@
 package com.company;
+import java.util.List;
+
 import static com.company.Interface.*;
+
+/** @author Kngz91 */
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Autosalon.createCars();
-        Car.showCars();
-        hat();
-        menu();
-        choiceNumber();
+        Autosalon autosalon = new Autosalon();
+        autosalon.createCars();
+
+        autosalon.priceSearch();
+//        autosalon.open();
     }
 }
 

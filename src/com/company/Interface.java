@@ -26,13 +26,13 @@ class Interface {
             int choice = scanner.nextInt();
             switch (choice) {
                 case (1):
-                    choiceYearSearch();
+//                    choiceYearSearch();
                     break;
                 case (2):
-                    budgetSet();
+//                    budgetSet();
                     break;
                 case (3):
-                    addCars();
+//                    addCars();
                     break;
                 case (4):
                     exit = true;
@@ -52,7 +52,7 @@ class Interface {
             String value = scanner.next();
             switch (value) {
                 case ("y"):
-                    choiceYearSearch();
+//                    choiceYearSearch();
                     break;
                 case ("n"):
                     exit = true;
@@ -73,8 +73,8 @@ class Interface {
             String value = scanner.next();
             switch (value) {
                 case ("y"):
-                    budgetSet();
-                    priceSearch();
+//                    budgetSet();
+//                    priceSearch();
                     break;
                 case ("n"):
                     exit = true;

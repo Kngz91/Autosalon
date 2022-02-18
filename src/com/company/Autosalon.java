@@ -10,12 +10,15 @@ import static com.company.Interface.*;
 
 class Autosalon {
 
-    static List<Car> cars = new ArrayList<>();
-    private static int budget;
+    List<Car> cars;
+    private int budget;
 
+    public Autosalon() {
+        cars = new ArrayList<>();
+        budget = 0;
+    }
 
-    public static void createCars() {
-
+    public void createCars() {
         cars.add(new Car("Audi Q5", 2006, 3.5, 1900, "Germany"));
         cars.add(new Car("Honda CR-V", 2007, 2.0, 4000, "Japan"));
         cars.add(new Car("Toyota Camry", 2012, 2.5, 3500, "Japan"));
@@ -23,11 +26,10 @@ class Autosalon {
         cars.add(new Car("Toyota Corolla", 2008, 1.5, 1800, "Japan"));
         cars.add(new Car("Honda Accord", 2011, 2.5, 2300, "Japan"));
         cars.add(new Car("Toyota Land Cruiser", 2010, 3.0, 3500, "Japan"));
-
         cars.add(new Car("BMW X1", 2013, 1.8, 2800, "Germany"));
     }
 
-    public static void addCars() {
+    public void addCars() {
         Scanner scanner = new Scanner(System.in);
         int n = 1;
         for (int i = 0; i < n; i++) {
@@ -50,7 +52,7 @@ class Autosalon {
         }
     }
 
-    public static void budgetSet() {
+    public void budgetSet() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Каким бюджетом располагаете? (Без учета Trade-In)");
         budget += scanner.nextInt();
@@ -64,12 +66,7 @@ class Autosalon {
 
     }
 
-
-    public static int getBudget() {
-        return budget;
-    }
-
-    public static void choiceYearSearch() {
+    public void choiceYearSearch() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выполняем подбор авто по году выпуска");
         System.out.println("Введите желаемый год");
@@ -91,8 +88,8 @@ class Autosalon {
         }
     }
 
-    public static void priceSearch() {
-        System.out.println("Выполняем подбор авто по стоимости:");
+    public void priceSearch() {
+//        System.out.println("Выполняем подбор авто по стоимости:");
         boolean exit = false;
 //        for (int i = 0; i < cars.size(); i++) {
 //            while (!exit) {
@@ -109,19 +106,44 @@ class Autosalon {
 //                }
 //            }
 //        }
-        for (Car t : cars) {
-            while (!exit) {
-                if (t.getPrice() <= getBudget()) {
-                    System.out.println(t.carInfo());
-                    break;
-                } else {
-                    System.out.println("No coincidence");
-                    System.out.println("Выполнить поиск с другим бюджетом? Y/N");
-                    yesnoPriceSearch();
+        Scanner scanner = new Scanner(System.in);
+
+        while (!exit) {
+            System.out.println("Введите желаемый бюджет: ");
+            int budget = scanner.nextInt();
+
+            List<Car> budgetCars = new ArrayList<Car>();
+            for (Car car : cars) {
+                if (car.getPrice() <= budget) {
+                    budgetCars.add(car);
+                }
+            }
+
+            if (budgetCars.size() == 0) {
+                System.out.println("No coincidence");
+                System.out.println("Выполнить поиск с другим бюджетом? Y/N");
+
+
+                String value = scanner.next();
+                if (value == "n") {
                     exit = true;
+                }
+            } else {
+                System.out.println("Найденные автомобили по Вашему бюджету:");
+                for (Car car: budgetCars) {
+                    System.out.println(car.toString());
                 }
             }
         }
+    }
+
+    /* Get */
+    public int getBudget() {
+        return budget;
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }
 
